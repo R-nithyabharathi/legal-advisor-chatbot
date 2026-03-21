@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0f0f0f;
+            color: #fff;
+        }
+        .header {
+            background: linear-gradient(135deg, #1495ff, #ff3aa7);
+            color: #ffb6c1;
+            padding: 30px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 58, 167, 0.2);
+            top: -50px;
+            right: -50px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card */
+        .card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(20, 149, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(255, 58, 167, 0.5);
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            color: #ffb6c1;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1495ff, #ff3aa7);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #ff3aa7, #1495ff);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 58, 167, 0.4);
+        }
+
+        /* Card animations */
+        .card {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .btm{
+            background: linear-gradient(135deg, #1495ff, #ff3aa7);
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover animation */
+        .btm:hover{
+            background: linear-gradient(135deg, #ff3aa7, #1495ff);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255,58,167,0.4);
+        }
+
+        /* Click effect */
+        .btm:active{
+            transform: scale(0.96);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                font-size: 24px;
+                padding: 25px;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Welcome, <span th:text="${username}">User</span></h1>
+</div>
+<div class="container">
+    <div class="card">
+        <h3>Chatbot History</h3>
+        <p>You can view your recent questions and answers here.</p>
+        <button class="btn" onclick="window.location.href='/chat'">Go to Chat</button>
+    </div>
+    <div class="card">
+        <h3>Suggested Lawyers</h3>
+        <p>Find lawyers based on your queries.</p>
+        <button class="btn" onclick="window.location.href='/lawyer'">View Lawyers</button>
+    </div>
+    <div class="card">
+        <h3>Suggested categories</h3>
+        <p>Find categories based on you queries </p>
+        <button class="btm" onclick="window.location.href='/categories'">View Categories</button>
+    </div>
+
+</div>
+</body>
+</html>

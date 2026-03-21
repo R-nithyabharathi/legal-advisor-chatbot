@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Legal Advisor</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:'Segoe UI',Tahoma;
+
+            background:
+                    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+                    url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80');
+
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            background:rgba(255,255,255,0.1);
+            backdrop-filter:blur(15px);
+            border-radius:20px;
+            padding:30px;
+            width:520px;
+            box-shadow:0 8px 32px rgba(0,0,0,0.4);
+            border:1px solid rgba(255,255,255,0.2);
+        }
+
+        h1{
+            color:white;
+            text-align:center;
+            margin-bottom:15px;
+        }
+
+        .chat-box{
+            height:300px;
+            overflow-y:auto;
+            background:rgba(255,255,255,0.2);
+            border-radius:10px;
+            padding:10px;
+            margin-bottom:15px;
+        }
+
+        .message{
+            margin:8px 0;
+            padding:10px 14px;
+            border-radius:12px;
+            max-width:80%;
+            font-size:14px;
+        }
+
+        .user{
+            background:#007bff;
+            color:white;
+            margin-left:auto;
+        }
+
+        .bot{
+            background:white;
+            color:black;
+        }
+
+        .input-area{
+            display:flex;
+            gap:10px;
+        }
+
+        input{
+            flex:1;
+            padding:10px;
+            border-radius:8px;
+            border:none;
+            outline:none;
+        }
+
+        button{
+            padding:10px 20px;
+            border:none;
+            border-radius:20px;
+            background:#007bff;
+            color:white;
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        .disclaimer{
+            margin-top:10px;
+            font-size:11px;
+            color:#ccc;
+            text-align:center;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Legal Advisor Chatbot</h1>
+
+    <div id="chatBox" class="chat-box">
+        <div class="message bot">Hello 👋 I am your Legal Assistant. Ask me your legal questions.</div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Ask your legal question...">
+        <button id="sendBtn" onclick="sendMessage()"> Send</button>
+    </div>
+    <div id="chatOptions">
+        <button onclick="goToLawyers()">Find a Lawyer</button>
+
+    </div>
+
+    <div class="disclaimer">
+        *This is an AI tool and does not constitute official legal advice.
+    </div>
+
+</div>
+<script>
+
+    const input = document.getElementById("userInput");
+    const chatBox = document.getElementById("chatBox");
+    const sendBtn = document.getElementById("sendBtn");
+
+    async function sendMessage() {
+
+        const message = input.value.trim();
+        if (!message) return;
+
+        // Show user message
+        chatBox.innerHTML += `<p><b>You:</b> ${message}</p>`;
+        input.value = "";
+        sendBtn.disabled = true;
+
+        // Typing indicator
+        const typing = document.createElement("p");
+        typing.id = "typing";
+        typing.innerHTML = "<b>Bot:</b> typing...";
+        chatBox.appendChild(typing);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        try {
+
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ question: message })
+            });
+
+
+            const data = await response.text();
+
+            // Remove typing
+            const typingElement = document.getElementById("typing");
+            if (typingElement) typingElement.remove();
+
+            // Show bot reply
+            chatBox.innerHTML += "<p><b>Bot:</b>" +data+"</p>";
+
+        } catch (error) {
+
+            const typingElement = document.getElementById("typing");
+            if (typingElement) typingElement.remove();
+
+            chatBox.innerHTML += `<p><b>Bot:</b> Server error. Please try again.</p>`;
+            console.error(error);
+        }
+
+        sendBtn.disabled = false;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function goToLawyers() {
+        window.location.href = "/lawyer";
+    }
+
+</script>
+
+</body>
+</html>

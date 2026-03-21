@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Legal Appointment - JurisAI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #000000, #111111, #1a0000);
+            color: #ffffff;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #111;
+            border-bottom: 3px solid #00ffea;
+            box-shadow: 0 5px 20px rgba(244, 130, 17, 0.3);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.3rem;
+            color: #4cbaff;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: rgba(20, 20, 20, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 111, 0.7);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            background: rgb(4, 11, 21);
+            border: 1px solid rgb(4, 11, 21);
+            color: #fff;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 100%;
+            background: rgba(93, 127, 133, 0.8);
+            color: rgb(4, 11, 21);
+            padding: 14px;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00ffea;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>⚖ Book Legal Consultation</h1>
+</div>
+
+<div class="container">
+    <h2>Appointment Details</h2>
+
+    <form action="/book" method="post">
+
+        <!-- ✅ Lawyer Dropdown (Correct Position) -->
+        <label>Select Lawyer</label>
+        <select id="lawyerName" name="lawyerName" required>
+            <option value="">-- Choose Lawyer --</option>
+            <option value="Mr. Arun Kumar">Mr. Arun Kumar (Property & Real Estate)</option>
+            <option value="Ms. Priya Dharshini">Ms. Priya Dharshini (Criminal)</option>
+            <option value="Mr. Ravi Shankar">Mr. Ravi Shankar (Family)</option>
+            <option value="Ms. Meena Iyer">Ms. Meena Iyer (Cyber)</option>
+            <option value="Mr. Vivek Sharma">Mr. Vivek Sharma (Tax)</option>
+            <option value="Ms. Kavita Singh">Ms. Kavita Singh (Divorce)</option>
+            <option value="Mr. Suresh Narayanan">Mr. Suresh Narayanan (Corporate)</option>
+            <option value="Ms. Anjali Menon">Ms. Anjali Menon (IP)</option>
+            <option value="Mr. Harish Kumar">Mr. Harish Kumar (Accident)</option>
+            <option value="Ms. Deepa Reddy">Ms. Deepa Reddy (Labour)</option>
+            <option value="Mr. Karthik Rajan">Mr. Karthik Rajan (Banking)</option>
+            <option value="Ms. Shalini Verma">Ms. Shalini Verma (Women Rights)</option>
+            <option value="Mr. Rohit">Mr. Rohit (Cyber Crime)</option>
+            <option value="Ms. Sneha Kapoor">Ms. Sneha Kapoor (Immigration)</option>
+        </select>
+        <input type="text" name="clientName" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <input type="number" name="phone" placeholder="Phone Number" required>
+
+
+        <input type="date" name="appointmentDate" required>
+
+        <input type="time" name="time" required>
+
+        <button type="submit">Book Appointment</button>
+
+    </form>
+</div>
+
+<script>
+    // ✅ Auto-select lawyer if coming from previous page
+    const urlParams = new URLSearchParams(window.location.search);
+    const lawyer = urlParams.get('lawyer');
+
+    if (lawyer) {
+        document.getElementById("lawyerName").value = lawyer;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurisAI - Verified Legal Experts</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #1495ff, #ff3aa7);
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #ffb6c1;
+        }
+        .header p {
+            font-style: italic;
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-top: 10px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* WHY CHOOSE US */
+        .why-us {
+            background: #1a1a1a;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 6px solid #ff3aa7;
+            box-shadow: 0 5px 20px rgba(20, 149, 255, 0.3);
+        }
+        .why-us h2 {
+            color: #ffb6c1;
+        }
+        .why-us ul {
+            list-style: none;
+            padding: 0;
+        }
+        .why-us li {
+            padding: 10px 0;
+            font-size: 17px;
+            color: #ddd;
+        }
+
+        /* LAWYER GRID */
+        .lawyer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* LAWYER CARD */
+        .lawyer-card {
+            background: #1a1a1a;
+            padding: 25px;
+            border-top: 5px solid #ff3aa7;
+            box-shadow: 0 8px 25px rgba(20, 149, 255, 0.2);
+            transition: 0.3s;
+            position: relative;
+        }
+        .lawyer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 58, 167, 0.4);
+        }
+        .lawyer-card h3 {
+            margin-top: 0;
+            color: #ffb6c1;
+        }
+        .rating {
+            color: #1495ff;
+        }
+        .book-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #1495ff;
+            color: #ffb6c1;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .book-btn:hover {
+            background: #ff3aa7;
+            color: #fff;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #1a1a1a;
+            color: #ffb6c1;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            border-top: 3px solid #ff3aa7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Justice Begins with the Right Advocate</h1>
+    <p>"Justice Delayed is Justice Denied"</p>
+</div>
+
+<div class="container">
+
+    <!-- WHY CHOOSE US -->
+    <div class="why-us">
+        <h2>Why Choose Legal Adviser Chatbot?</h2>
+        <ul>
+            <li>✔ Verified & Licensed Advocates</li>
+            <li>✔ 10+ Years Average Experience</li>
+            <li>✔ Transparent Consultation Fees</li>
+            <li>✔ Confidential & Secure Support</li>
+            <li>✔ AI + Human Legal Assistance</li>
+        </ul>
+    </div>
+
+    <!-- LAWYERS -->
+    <div class="lawyer-grid">
+
+        <div class="lawyer-card">
+            <h3>Adv. Arun Kumar</h3>
+            <p>Specialization: Property & Real Estate</p>
+            <p>Experience: 12+ Years</p>
+            <p>Consultation Fee: ₹1500</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Arun Kumar'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Priya Dharshini</h3>
+            <p>Specialization: Criminal Law</p>
+            <p>Experience: 10+ Years</p>
+            <p>Consultation Fee: ₹2000</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Priya Dharshini'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Ravi Shankar</h3>
+            <p>Specialization: Family & Matrimonial</p>
+            <p>Experience: 9+ Years</p>
+            <p>Consultation Fee: ₹1200</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.3)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Ravi Shankar'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Meena Iyer</h3>
+            <p>Specialization: Cyber Law</p>
+            <p>Experience: 8+ Years</p>
+            <p>Consultation Fee: ₹1800</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Meena Iyer'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Vivek Sharma</h3>
+            <p>Specialization: Taxation & GST</p>
+            <p>Experience: 15+ Years</p>
+            <p>Consultation Fee: ₹2200</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.6)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Vivek Sharma'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Kavita Singh</h3>
+            <p>Specialization: Divorce & Custody</p>
+            <p>Experience: 11+ Years</p>
+            <p>Consultation Fee: ₹1600</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (4.7)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Kavitha Singh'">
+                Book Appointment
+            </button>        </div>
+
+        <!-- NEW LAWYERS -->
+
+        <div class="lawyer-card">
+            <h3>Adv. Suresh Narayanan</h3>
+            <p>Specialization: Corporate & Business Law</p>
+            <p>Experience: 14+ Years</p>
+            <p>Consultation Fee: ₹2500</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (4.9)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Suresh Narayanan'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Anjali Menon</h3>
+            <p>Specialization: Intellectual Property (IPR)</p>
+            <p>Experience: 9+ Years</p>
+            <p>Consultation Fee: ₹1800</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.6)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Anjali Menon'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Harish Kumar</h3>
+            <p>Specialization: Motor Accident Claims</p>
+            <p>Experience: 11+ Years</p>
+            <p>Consultation Fee: ₹1300</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.4)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Harish Kumar'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Deepa Reddy</h3>
+            <p>Specialization: Employment & Labour Law</p>
+            <p>Experience: 13+ Years</p>
+            <p>Consultation Fee: ₹1700</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (4.8)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Deepa Reddy'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Karthik Rajan</h3>
+            <p>Specialization: Banking & Finance Law</p>
+            <p>Experience: 10+ Years</p>
+            <p>Consultation Fee: ₹2100</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Karthik Rajan'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Shalini Verma</h3>
+            <p>Specialization: Domestic Violence & Women Rights</p>
+            <p>Experience: 8+ Years</p>
+            <p>Consultation Fee: ₹1400</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (4.7)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Shalini Verma'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Rohit </h3>
+            <p>Specialization: Cyber Crime & Digital Fraud</p>
+            <p>Experience: 12+ Years</p>
+            <p>Consultation Fee: ₹1900</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.6)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Rohit'">
+                Book Appointment
+            </button>        </div>
+
+        <div class="lawyer-card">
+            <h3>Adv. Sneha Kapoor</h3>
+            <p>Specialization: Immigration & Visa Law</p>
+            <p>Experience: 7+ Years</p>
+            <p>Consultation Fee: ₹1600</p>
+            <p class="rating">⭐⭐⭐⭐☆ (4.4)</p>
+            <button class="book-btn"
+                    onclick="window.location.href='/appointment?lawyer=Sneha Kapoor'">
+                Book Appointment
+            </button>        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <h3>Need Immediate Legal Assistance?</h3>
+    <p>Email: support@jurisai.com | Helpline: +91 98765 43210</p>
+</div>
+
+<script>
+    function bookNow(name) {
+        alert("Appointment request sent to Adv. " + name + ". Our team will contact you shortly.");
+    }
+</script>
+
+</body>
+</html>

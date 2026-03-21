@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legal Practice Areas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== BODY ===== */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000, #111111, #00b3fd);
+            color: #e0e0e0;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #bbbbbb;
+            margin-bottom: 50px;
+        }
+
+        /* ===== GRID ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* ===== GLASS CARDS ===== */
+        .card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 178, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            text-align: left;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border: 1px solid rgba(0, 217, 255, 0.8);
+            box-shadow: 0 15px 35px rgba(255, 0, 111, 0.7);
+        }
+
+        /* ===== ICON ===== */
+        .icon {
+            font-size: 2.2rem;
+            color: #ff4c4c;
+            margin-bottom: 15px;
+            transition: 0.3s ease;
+        }
+
+        .card:hover .icon {
+            transform: scale(1.1);
+            text-shadow: 0 0 15px rgba(0, 166, 255, 0.9);
+        }
+
+        /* ===== TEXT ===== */
+        .card h3 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        /* ===== BUTTON ===== */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: transparent;
+            border: 1px solid #ff4cb7;
+            color: #4cc0ff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #ff4c4c;
+            color: #121212;
+            box-shadow: 0 0 10px rgba(0, 196, 255, 0.7);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Practice Areas</h1>
+    <p class="subtitle">Expert legal representation across multiple disciplines.</p>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3>Corporate Law</h3>
+            <p>Navigating complex business regulations, mergers, and internal governance with precision.</p>
+            <a href="/chat?type=corporate" class="btn">View Details →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fa-solid fa-people-roof"></i></div>
+            <h3>Family Law</h3>
+            <p>Compassionate guidance for divorce, child custody, and estate planning matters.</p>
+            <a href="/chat?type=family" class="btn">View Details →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Intellectual Property</h3>
+            <p>Protecting your innovations, trademarks, and creative works in a global market.</p>
+            <a href="/chat?type=intellectual" class="btn">View Details →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fa-solid fa-gavel"></i></div>
+            <h3>Criminal Defense</h3>
+            <p>A rigorous defense strategy to protect your rights and ensure a fair trial.</p>
+            <a href="/chat?type=criminal" class="btn">View Details →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fa-solid fa-building"></i></div>
+            <h3>Real Estate</h3>
+            <p>Assistance with commercial and residential property transactions and litigation.</p>
+            <a href="/chat?type=realestate" class="btn">View Details →</a>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fa-solid fa-notes-medical"></i></div>
+            <h3>Personal Injury</h3>
+            <p>Fighting for the compensation you deserve following accidents or negligence.</p>
+            <a href="/chat?type=personalinjury" class="btn">View Details →</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
